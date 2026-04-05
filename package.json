@@ -1,0 +1,23 @@
+{
+  "name": "tongue-api",
+  "version": "1.0.0",
+  "description": "REST API JSON per la gestione di post, utenti e interazioni del progetto Tongue",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "rest-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.3"
+  }
+}
