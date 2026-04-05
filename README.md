@@ -23,7 +23,7 @@ Il progetto usa `Express` e `MySQL` con query parametrizzate (`prepared statemen
 npm install
 ```
 
-2. Crea il file `.env` partendo da `.env.example`.
+2. Modifica il file `.env`.
 
 3. Esegui lo script SQL presente in `migrations.sql`.
 
