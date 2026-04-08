@@ -1,19 +1,10 @@
 const asyncHandler = require("../utils/async-handler");
 const HttpError = require("../utils/http-error");
+const parseId = require("../utils/parse-id");
 const { validateInteractionPayload } = require("../utils/validation");
 const interactionsService = require("../services/interactions.service");
 const postsService = require("../services/posts.service");
 const usersService = require("../services/users.service");
-
-const parseId = (id) => {
-  const parsedId = Number(id);
-
-  if (!Number.isInteger(parsedId) || parsedId <= 0) {
-    throw new HttpError(400, "ID non valido.");
-  }
-
-  return parsedId;
-};
 
 const ensureRelatedResourcesExist = async ({ postId, userId }) => {
   const [post, user] = await Promise.all([

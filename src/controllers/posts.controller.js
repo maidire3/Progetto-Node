@@ -1,17 +1,8 @@
 const asyncHandler = require("../utils/async-handler");
 const HttpError = require("../utils/http-error");
+const parseId = require("../utils/parse-id");
 const { isValidDateTime, validatePostPayload } = require("../utils/validation");
 const postsService = require("../services/posts.service");
-
-const parseId = (id) => {
-  const parsedId = Number(id);
-
-  if (!Number.isInteger(parsedId) || parsedId <= 0) {
-    throw new HttpError(400, "ID non valido.");
-  }
-
-  return parsedId;
-};
 
 const listPosts = asyncHandler(async (req, res) => {
   const { insertedAt, city, interactionDate } = req.query;
