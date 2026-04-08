@@ -9,8 +9,8 @@ const validatePostPayload = (payload) => {
     throw new HttpError(400, "Il campo title e' obbligatorio.");
   }
 
-  if (!payload.insertedAt || !isValidDateTime(payload.insertedAt)) {
-    throw new HttpError(400, "Il campo insertedAt deve essere una data valida.");
+  if (!payload.publishedAt || !isValidDateTime(payload.publishedAt)) {
+    throw new HttpError(400, "Il campo publishedAt deve essere una data valida.");
   }
 };
 

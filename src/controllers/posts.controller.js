@@ -5,17 +5,17 @@ const { isValidDateTime, validatePostPayload } = require("../utils/validation");
 const postsService = require("../services/posts.service");
 
 const listPosts = asyncHandler(async (req, res) => {
-  const { insertedAt, city, interactionDate } = req.query;
+  const { publishedAt, city, interactionDate } = req.query;
 
-  if (insertedAt && !isValidDateTime(insertedAt)) {
-    throw new HttpError(400, "Il filtro insertedAt deve essere una data valida.");
+  if (publishedAt && !isValidDateTime(publishedAt)) {
+    throw new HttpError(400, "Il filtro publishedAt deve essere una data valida.");
   }
 
   if (interactionDate && !isValidDateTime(interactionDate)) {
     throw new HttpError(400, "Il filtro interactionDate deve essere una data valida.");
   }
 
-  const posts = await postsService.getPosts({ insertedAt, city, interactionDate });
+  const posts = await postsService.getPosts({ publishedAt, city, interactionDate });
 
   res.status(200).json(posts);
 });

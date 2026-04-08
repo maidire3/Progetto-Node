@@ -57,7 +57,7 @@ DB_NAME=tongue_db
 
 - `id`
 - `title`
-- `insertedAt`
+- `publishedAt`
 
 ### Interactions
 
@@ -83,7 +83,7 @@ DB_NAME=tongue_db
 
 Filtri disponibili su `GET /api/posts`:
 
-- `insertedAt=YYYY-MM-DD`
+- `publishedAt=YYYY-MM-DD`
 - `city=NomeCitta`
 - `interactionDate=YYYY-MM-DD`
 
@@ -116,7 +116,7 @@ La risposta include gli aggregati:
 ```json
 {
   "title": "Plastic-free: 5 azioni concrete per la vita quotidiana",
-  "insertedAt": "2026-04-05T10:30:00"
+  "publishedAt": "2026-04-05T10:30:00"
 }
 ```
 

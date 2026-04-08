@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS posts (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
-  inserted_at DATETIME NOT NULL,
+  published_at DATETIME NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS interactions (
   CONSTRAINT fk_interactions_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_posts_inserted_at ON posts(inserted_at);
+CREATE INDEX idx_posts_published_at ON posts(published_at);
 CREATE INDEX idx_users_city ON users(city);
 CREATE INDEX idx_interactions_time ON interactions(interaction_time);
 CREATE INDEX idx_interactions_post_user ON interactions(post_id, user_id);
